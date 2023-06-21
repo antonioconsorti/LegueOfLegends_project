@@ -1,0 +1,34 @@
+footer {
+  color: #C89B3C;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+div{
+  color: #C89B3C;
+  padding: 20px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  background-color: #091428!important;
+  border-top-left-radius: 50% 80px;
+  width: 85%;
+}
+.divLogo{
+  width: 10%;
+}
+.logo{
+  width: 10%;
+}
+p{
+  margin-right: 10%;
+  display: flex;
+  align-items: center;
+}
