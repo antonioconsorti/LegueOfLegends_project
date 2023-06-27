@@ -1,0 +1,18 @@
+<div *ngIf="champion">
+  <div class="divPrincipale" >
+    <div class="divImmagine">
+    <div class="img" [ngStyle]="{'background-image': 'url(' + champion.image + ')'}"></div>
+  </div>
+  <div class="divTesti">
+    <h1>{{champion.name}}</h1>
+  </div>
+  </div>
+  <div class="divSecondario">
+    <h3>Descrizione</h3>
+    <p>{{champion.description}}</p>
+  </div>
+</div>
+
+<div *ngIf="!champion">
+  <p>IL CHAMPION NON ESISTE</p>
+</div>

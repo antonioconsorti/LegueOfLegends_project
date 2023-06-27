@@ -1,0 +1,36 @@
+@import "../../../styles/colors.scss";
+
+.container-card{
+  margin-top: 10px;
+  display: block;
+  float: left;
+  width: 31%;
+  margin-left: 1.6%;
+  margin-bottom: 30px;
+  transition: transform 0.2s;
+  .card{
+    cursor: pointer;
+    border-color: $primary-color-3;
+    .card-image{
+    //background-image: url('...');
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    }
+    .card-body{
+      background-color: $primary-color-2;
+      .card-title{
+        color: $primary-color-3;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    &:hover {
+      .card-image {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+

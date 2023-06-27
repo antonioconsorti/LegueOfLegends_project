@@ -1,0 +1,41 @@
+@import "../../../../styles/colors.scss";
+
+.divPrincipale{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin: 10px;
+  .divImmagine{
+    width: 100%;
+    .img{
+      border-radius: 20%;
+      margin-top: 1px;
+      width: 100%;
+      height: 500px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  .divTesti{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+      color: $primary-color-3;
+      font-weight: bolder;
+    }
+  }
+}
+.divSecondario{
+  margin-left: 20px;
+  h3{
+    font-weight: bold;
+    color: $primary-color-3;
+  }
+  p{
+    color: $primary-color-3;
+  }
+}

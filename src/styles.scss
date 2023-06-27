@@ -1,9 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../src/styles/colors.scss";
+
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "primeicons/primeicons.css";
 
 body{
-  background-color: #010A13!important;
+  background-color: $primary-color-1!important;
   font-family: 'Montserrat', sans-serif!important;
 }
 

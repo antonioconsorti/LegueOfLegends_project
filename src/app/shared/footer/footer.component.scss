@@ -1,5 +1,7 @@
+@import "../../../styles/colors.scss";
+
 footer {
-  color: #C89B3C;
+  color: $primary-color-3;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -9,7 +11,7 @@ footer {
   justify-content: flex-end;
 }
 div{
-  color: #C89B3C;
+  color: $primary-color-3;
   padding: 20px;
   left: 0;
   bottom: 0;
@@ -17,7 +19,7 @@ div{
   display: flex;
   flex-direction: row;
   justify-content: end;
-  background-color: #091428!important;
+  background-color: $primary-color-2!important;
   border-top-left-radius: 50% 80px;
   width: 85%;
 }

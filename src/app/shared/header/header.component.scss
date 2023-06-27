@@ -1,5 +1,7 @@
+@import "../../../styles/colors.scss";
+
 .sopra{
-  background-color: #091428!important;
+  background-color: $primary-color-2!important;
   width: 85%;
   border-bottom-right-radius: 20% 80px;
 }
@@ -11,7 +13,7 @@
   margin-left: 5%;
 }
 a{
-  color: #C89B3C!important;
+  color: $primary-color-3!important;
 }
 .aCliccabile{
   position: relative;
@@ -26,9 +28,9 @@ a{
   cursor: pointer;
 }
 .aCliccabile:hover{
-  background: #C89B3C;
+  background: $primary-color-3;
   color: black!important;
-  box-shadow: 0 0 50px #C89B3C;
+  box-shadow: 0 0 50px $primary-color-3;
   transition-delay: 0.5s;
 }
 .aCliccabile:before{
@@ -38,8 +40,8 @@ a{
   left: 0;
   width: 10px;
   height: 10px;
-  border-top: 2px solid #C89B3C;
-  border-left: 2px solid #C89B3C;
+  border-top: 2px solid $primary-color-3;
+  border-left: 2px solid $primary-color-3;
   transition: 0.5s;
 }
 .aCliccabile:hover:before{
@@ -54,8 +56,8 @@ a{
   right: 0;
   width: 10px;
   height: 10px;
-  border-bottom: 2px solid #C89B3C;
-  border-right: 2px solid #C89B3C;
+  border-bottom: 2px solid $primary-color-3;
+  border-right: 2px solid $primary-color-3;
   transition: 0.5s;
 }
 .aCliccabile:hover:after{

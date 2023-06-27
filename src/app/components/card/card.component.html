@@ -1,0 +1,8 @@
+<div class="container-card" *ngFor="let champion of champions">
+  <div class="card" [routerLink]="'/champions/champion/'+champion.name+'/'+champion.id">
+    <div class="card-image" [ngStyle]="{'background-image': 'url(' + champion.image + ')'}"></div>
+    <div class="card-body">
+      <h5 class="card-title">{{champion.name}}</h5>
+    </div>
+  </div>
+</div>
