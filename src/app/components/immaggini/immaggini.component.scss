@@ -1,6 +1,6 @@
 .divContainer{
   width: 100%;
-  height: 100%;
+  height: 90vh;
 }
 .container {
   position: relative;
@@ -8,7 +8,7 @@
   height: 100%;
 }
 .square{
-  position: absolute;
+  position: relative;
   overflow: hidden;
   img {
     width: 100%;
@@ -20,23 +20,23 @@
   width: 40%; height: 250px;
   top: 0%;
   left: 60%;
-  transform: translate(0%, 70%);
+  transform: translate(0%, -130%);
 }
 .square2{
   width: 80%; height: 300px;
   top: 0%;
   left: 3%;
-  transform: translate(0%, -0%);
+  transform: translate(0%, 20%);
 }
 .square3 {
   width: 95%; height: 300px;
   left: 3%;
-  transform: translate(-3%, 130%);
+  transform: translate(-3%, 70%);
 }
 .square4 {
   width: 40%; height: 250px;
   top: 0%;
   left: 8%;
-  transform: translate(0%, 110%);
+  transform: translate(0%, -200%);
 }
 

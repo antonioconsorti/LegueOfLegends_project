@@ -7,6 +7,8 @@ import { ChampionsComponent } from './pages/champions/champions.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { ChampionDetailComponent } from './pages/champions/champion-detail/champion-detail.component';
 import { ChampionsListComponent } from './pages/champions/champions-list/champions-list.component';
+import { UserComponent } from './pages/user/user.component';
+import { RegistrationComponent } from './pages/user/registration/registration.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -17,6 +19,9 @@ const routes: Routes = [
     { path: 'champion/:name/:id', component: ChampionDetailComponent },
     { path: '', component: ChampionsListComponent, pathMatch: 'full' }
   ] },
+  { path: 'user', component: UserComponent, children:[
+    { path: '', component: RegistrationComponent, pathMatch: 'full' },
+  ]},
   { path: 'error', component: ErrorComponent },
   { path: '**', redirectTo: 'error' }
 ];

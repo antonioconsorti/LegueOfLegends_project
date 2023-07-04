@@ -1,0 +1,92 @@
+<section class="vh-100 bg-image"
+  style="background-image: url('https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2017/01/03/1331837749223_2/the-fields-of-justice-have-a-complicated-history');">
+  <div class="mask">
+    <div class="container">
+      <div class="row d-flex justify-content-center align-items-center ">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body">
+              <h2>REGISTRATI</h2>
+
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" placeholder="nome" name="name" formControlName="name" ngModel />
+                  <div class="divisore">
+                    <label class="form-label" for="form3Example1cg">Nome</label>
+                    <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Il campo obbligatorio</p>
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" placeholder="email@email.email" name="email" formControlName="email" ngModel />
+                  <div class="divisore">
+                    <label class="form-label" for="form3Example3cg">Email</label>
+                    <p class="help is-danger" *ngIf="form.controls.email.hasError('required') && form.controls.email.touched">Il campo è obbligatorio</p>
+                    <p class="help is-danger" *ngIf="form.controls.email.hasError('email')  && form.controls.email.touched">L'email non è valida</p>
+                </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="cellulare" id="form3Example3cg" class="form-control form-control-lg" placeholder="444 444 Jhin" name="cellulare" formControlName="cellulare" ngModel />
+                  <div class="divisore">
+                    <label class="form-label" for="form3Example3cg">Cellulare (facoltativo)</label>
+                    <p class="help is-danger" *ngIf="form.controls.cellulare.hasError('pattern') && form.controls.cellulare.touched">Il cellulare deve essere di 10 numeri</p>
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <p-password id="form3Example4c" class="form-control form-control-lg" placeholder="1234" name="password" formControlName="password" [toggleMask]="true" strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
+                    <ng-template pTemplate="header">
+                      <h6>Scrivi una password</h6>
+                    </ng-template>
+                    <p-divider></p-divider>
+                    <ng-template pTemplate="footer">
+                      <p>Suggerimenti</p>
+                      <ul style="line-height: 1.5;">
+                        <li>1 lettera maiuscola</li>
+                        <li>1 lettera minuscola</li>
+                       <li>1 numero</li>
+                        <li>minimo 8 massimo 16</li>
+                      </ul>
+                    </ng-template>
+                  </p-password>
+                  <div class="divisore">
+                    <label class="form-label" for="form3Example4cg">Password</label>
+                    <p class="help is-danger" *ngIf="form.controls.password.hasError('pattern') && form.controls.password.touched">Il campo password deve avere 1 Maiuscola, 1 minuscola, 1 numero, 1 carattere spazio</p>
+                    <p class="help is-danger" *ngIf="form.controls.password.hasError('required') && form.controls.password.touched">Il campo password è obbligatorio</p>
+              </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <p-password  id="form3Example4c" class="form-control form-control-lg" placeholder="1234" name="ripeti" formControlName="ripeti" [toggleMask]="true" (ngModelChange)="controlloPassword()"></p-password>
+                    <div class="divisore">
+                    <label class="form-label" for="form3Example4cdg">Ripeti password</label>
+                    <p class="help is-danger" *ngIf="!controlloPassword() && form.get('ripeti').dirty">Il campo non corrisponde con la password</p>
+                  </div>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="form2Example3cg" name="box" formControlName="box" ngModel />
+                  <label class="form-check-label" for="form2Example3g">
+                    Accetto tutti i <a href="#!" class="text-body"><u>Termini di servizio</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="">Register</button>
+                </div>
+
+                <p class="account">Hai già un account? <a href="#!"
+                    class="fw-bold text-body"><u>Login</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
