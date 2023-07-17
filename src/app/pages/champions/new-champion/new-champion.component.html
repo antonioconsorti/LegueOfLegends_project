@@ -1,0 +1,68 @@
+
+<section class="vh-100 bg-image"
+  style="background-image: url('../../../../assets/img/champions.png');">
+  <div class="mask">
+    <div class="container">
+      <div class="row d-flex justify-content-center align-items-center ">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body">
+              <h2>Aggiungi un campione</h2>
+
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" placeholder="name" name="name" formControlName="name" ngModel />
+                  <div class="divisore">
+                    <label class="form-label" for="form3Example1cg">Titolo</label>
+                    <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Il campo obbligatorio</p>
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <ckeditor [editor]="Editor" class="description" formControlName="description" (ready)="onReady($event)"></ckeditor>
+                  <div class="divisore">
+                    <label class="form-label" for="form3Example3cg">Descrizione</label>
+                    <p class="help is-danger" *ngIf="form.controls.description.hasError('required') && form.controls.description.touched">Il campo è obbligatorio</p>
+                </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example3cg" class="form-control form-control-lg" placeholder="https://......" name="image" formControlName="image" ngModel />
+                  <div class="divisore">
+                    <label class="form-label" for="form3Example3cg">Immagine</label>
+                    <p class="help is-danger" *ngIf="form.controls.image.hasError('required') && form.controls.image.touched">Il campo è obbligatorio</p>
+                </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit" (click)="open(activeModal)" [disabled]="!form.valid">Aggiungi</button>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #activeModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Riassunto</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body" style="display: flex; flex-direction: column;">
+    <div class="imageModale" [ngStyle]="{'background-image': 'url(' + form.value.image + ')'}"></div>
+    <ul>
+      <li>Titolo: <strong>{{ form.value.name }}</strong></li>
+      <li>Descrizione: <strong><span [innerHTML]="form.value.description"></span></strong></li>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="createChampion()" (click)="modal.close('Close click')" (click)="clearForm()">Conferma</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')" routerLink="/champions">Close</button>
+  </div>
+  </ng-template>

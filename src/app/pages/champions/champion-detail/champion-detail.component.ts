@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { take } from 'rxjs';
 import { Champion } from 'src/app/models/champion.model';
-import { ChamiponService } from 'src/app/services/champion.service';
+import { ChampionService } from 'src/app/services/champion.service';
 
 @Component({
   selector: 'app-champion-detail',
@@ -14,7 +14,7 @@ export class ChampionDetailComponent implements OnInit{
   champion: Champion;
 
   constructor(
-    private championService: ChamiponService,
+    private championService: ChampionService,
     private activatedRoute: ActivatedRoute,
     private router: Router
     ){}

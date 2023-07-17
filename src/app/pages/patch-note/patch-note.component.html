@@ -1,1 +1,18 @@
-<a href="https://www.leagueoflegends.com/it-it/news/tags/patch-notes/">Visualizza patch-note</a>
+ <div class="divIntero">
+  <div class="divImage">
+    <img class="image" [src]="randomChampion.image" alt="Champion Image">
+  </div>
+
+  <div class="divSecondario">
+    <div class="divScritte">
+      <h2>Indovina il campione:</h2>
+      <input type="text" [(ngModel)]="guessName">
+      <button class="aCliccabile" (click)="checkGuess()">Verifica</button>
+    </div>
+
+    <div class="divCorretto" *ngIf="guessName !== ''">
+      <p *ngIf="isCorrect">Corretto!</p>
+      <p *ngIf="!isCorrect">Sbagliato!</p>
+    </div>
+  </div>
+</div>

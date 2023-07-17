@@ -1,6 +1,109 @@
 @import "../../../styles/colors.scss";
 
-a{
+ .divIntero {
+  height: 79vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: $primary-color-3;
+  .divImage{
+    .image{
+      width: 1000px;
+      border: 3px solid $primary-color-3;
+    }
+    margin-right: 10px;
+  }
+  .divSecondario{
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .divScritte{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h2, input, button {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+}
+
+button.aCliccabile{
+  background-color: $primary-color-1;
+  color: $primary-color-3;
+  position: relative;
+  padding: 10px;
+  margin: 0 15px;
   text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 20px;
+  overflow: hidden;
+  transition: 0.5s;
+  border: 0;
+  cursor: pointer;
+}
+button.aCliccabile:hover{
+  background: $primary-color-3;
+  color: black!important;
+  box-shadow: 0 0 50px $primary-color-3;
+  transition-delay: 0.15s;
+}
+button.aCliccabile:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid $primary-color-3;
+  border-left: 2px solid $primary-color-3;
+  transition: 0.5s;
+}
+button.aCliccabile:hover:before{
+  width: 100%;
+  height: 100%;
+  transition-delay: 0.15s;
+}
+button.aCliccabile:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid $primary-color-3;
+  border-right: 2px solid $primary-color-3;
+  transition: 0.5s;
+}
+button.aCliccabile:hover:after{
+  width: 100%;
+  height: 100%;
+  transition-delay: 0.15s;
+}
+
+@media screen and (max-width: 960px) {
+  .divIntero {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    .divImage{
+      .image{
+        width: 600px;
+      }
+      margin-top: 50px;
+    }
+  }
+}
+@media screen and (max-width: 660px) {
+  .divIntero {
+    .divImage{
+      .image{
+        width: 500px;
+      }
+    }
+  }
 }

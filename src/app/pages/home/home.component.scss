@@ -20,3 +20,23 @@
   flex-direction: column;
   justify-content: center;
 }
+@media screen and (max-width: 980px) {
+  .divPagina{
+    flex-direction: column;
+    height: 100%;
+  }
+  .left-section{
+    height: 50%;
+  }
+  .right-section {
+    margin-top: 100px;
+    height: 50%;
+    clear: both;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .right-section {
+    margin-top: 200px;
+  }
+}

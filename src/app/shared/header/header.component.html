@@ -12,9 +12,11 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="active aCliccabile" routerLink="lore">Lore</a>
-          <a class="active aCliccabile" routerLink="patch">Patch note</a>
+          <a class="active aCliccabile" routerLink="patch">Mini game</a>
           <a class="active aCliccabile" routerLink="champions">Champions</a>
-          <a class="active aCliccabile" routerLink="user">Registration</a>
+          <a class="active aCliccabile" routerLink="user" *ngIf="!auth.isLogged()">Login</a>
+          <a class="active aCliccabile" routerLink="champions/newChampion" routerLinkActive="active" *ngIf="ruolo == 'admin' && auth.isLogged()">Aggiungi champ</a>
+          <a class="active aCliccabile" (click)="logout()" *ngIf="auth.isLogged()" style="cursor: pointer;"><i class="pi pi-sign-out"></i>Esci</a>
         </div>
       </div>
     </div>

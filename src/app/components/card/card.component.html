@@ -1,8 +1,70 @@
-<div class="container-card" *ngFor="let champion of champions">
-  <div class="card" [routerLink]="'/champions/champion/'+champion.name+'/'+champion.id">
-    <div class="card-image" [ngStyle]="{'background-image': 'url(' + champion.image + ')'}"></div>
-    <div class="card-body">
-      <h5 class="card-title">{{champion.name}}</h5>
+<div class="paginatorChampions" style="display: flex; flex-direction: column;">
+<div>
+  <div class="container-card" *ngFor="let champion of champions | slice: (page * champPerPagina) - champPerPagina : page * champPerPagina">
+    <div class="card" [routerLink]="'/champions/champion/'+champion.name+'/'+champion._id">
+      <div class="card-image" [ngStyle]="{'background-image': 'url(' + champion.image + ')'}"></div>
+      <div class="card-body">
+        <h5 class="card-title">{{champion.name}}</h5>
+        <div class="divBalls"  *ngIf="auth.isLogged() && ruolo === 'admin'">
+          <button class="aCliccabile" type="button" (click)="openModal2(champion)"><i class="pi pi-trash"></i></button>
+          <button class="aCliccabile" type="button" (click)="openModal(champion)"><i class="pi pi-file-edit"></i></button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+  <p-paginator (onPageChange)="paginate($event)" [rows]="champPerPagina" [totalRecords]="champions.length"></p-paginator>
+
+</div>
+
+<ng-template #activeModal let-modal>
+  <div class="modal-header">
+    <h2 class="modal-title">Aggiorna Campione</h2>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()">
+    </button>
+  </div>
+  <div class="modal-body">
+    <section>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="title">Nome del campione</label>
+          <input type="text" id="name" name="name" class="form-control" formControlName="name" required>
+        </div>
+        <div>
+          <label for="description">Descrizione</label>
+          <ckeditor [editor]="editor" class="form-control description" formControlName="description"></ckeditor>
+        </div>
+        <div>
+          <label for="image">Scrivi l'URL della foto</label>
+          <input type="text" id="image" name="image" class="form-control" formControlName="image">
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" (click)="modal.dismiss()">Aggiorna</button>
+          <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Annulla</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</ng-template>
+
+<ng-template #activeModal2 let-modal>
+<div class="modaleDelete">
+
+<div class="modal-header">
+  <h2 class="modal-title">Attenzione</h2>
+  <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()">
+  </button>
+</div>
+  <h4>Stai eliminando questo campione:</h4>
+  <div class="modal-body">
+    <img [src]="image_" alt="Immagine Campione" class="modal-image">
+    <h4 class="modal-title">{{name_}}</h4>
+  </div>
+  <div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Annulla</button>
+  <button type="button" class="btn btn-primary" routerLink="/champions" (click)="deleteChampion()" (click)="modal.dismiss()">Elimina ricetta</button>
+</div>
+</div>
+</ng-template>
+<p-toast position="bottom-right"></p-toast>

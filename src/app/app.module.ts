@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { PrimeNGConfig } from 'primeng/api';
+import { PaginatorModule } from 'primeng/paginator';
+import { ToastModule } from 'primeng/toast';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { MessageService } from 'primeng/api';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -23,6 +28,8 @@ import { ChampionDetailComponent } from './pages/champions/champion-detail/champ
 import { ChampionsListComponent } from './pages/champions/champions-list/champions-list.component';
 import { UserComponent } from './pages/user/user.component';
 import { RegistrationComponent } from './pages/user/registration/registration.component';
+import { NewChampionComponent } from './pages/champions/new-champion/new-champion.component';
+import { LoginComponent } from './pages/user/login/login.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +47,9 @@ import { RegistrationComponent } from './pages/user/registration/registration.co
     ChampionDetailComponent,
     ChampionsListComponent,
     UserComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    NewChampionComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -50,9 +59,13 @@ import { RegistrationComponent } from './pages/user/registration/registration.co
     ReactiveFormsModule,
     PasswordModule,
     DividerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PaginatorModule,
+    ToastModule,
+    HttpClientModule,
+    CKEditorModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

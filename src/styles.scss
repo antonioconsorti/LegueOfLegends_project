@@ -22,3 +22,49 @@ body{
     margin: 0;
   }
 }
+.paginatorChampions{
+  .p-paginator {
+
+    background-color: $primary-color-1!important;
+    padding: 0!important;
+    color: $primary-color-2;
+    button{
+      color: $primary-color-3;
+    }
+    span.p-paginator-pages{
+      button{
+        color: $primary-color-3;
+      }button.p-ripple.p-element.p-paginator-page.p-paginator-element.p-link.p-highlight{
+        background-color: $primary-color-1;
+        color: $primary-color-3;
+        font-weight: bold;
+      }
+    }
+  }
+}
+ngb-modal-window.d-block.modal.fade.show{
+  .modal-dialog.modal-dialog-centered.modal-lg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .modal-content{
+      border: solid 5px $primary-color-3;
+      width: 90%;
+      min-height: 500px;
+      background-color: $primary-color-1;
+      color: $primary-color-3;
+      .modal-body{
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+@media screen and (max-width: 960px) {
+
+}
+
+.ck.ck-content.ck-editor__editable {
+  border: 1px solid $primary-color-3;
+  min-height: 200px;
+}

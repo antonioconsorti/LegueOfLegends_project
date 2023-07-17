@@ -31,7 +31,7 @@ a{
   background: $primary-color-3;
   color: black!important;
   box-shadow: 0 0 50px $primary-color-3;
-  transition-delay: 0.5s;
+  transition-delay: 0.15s;
 }
 .aCliccabile:before{
   content: '';
@@ -47,7 +47,7 @@ a{
 .aCliccabile:hover:before{
   width: 100%;
   height: 100%;
-  transition-delay: 0.5s;
+  transition-delay: 0.15s;
 }
 .aCliccabile:after{
   content: '';
@@ -63,6 +63,12 @@ a{
 .aCliccabile:hover:after{
   width: 100%;
   height: 100%;
-  transition-delay: 0.5s;
+  transition-delay: 0.15s;
 }
 
+button.navbar-toggler {
+  border-color: $primary-color-3;
+  span.navbar-toggler-icon {
+    background-color: $primary-color-3;
+  }
+}

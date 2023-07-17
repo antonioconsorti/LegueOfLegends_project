@@ -4,8 +4,6 @@
     display: flex;
     align-items: center;
     height: 100%;
-    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
-    background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
   }
 .bg-image{
   background-repeat: no-repeat;
@@ -37,6 +35,12 @@
 
   }
 }
+#registrarti{
+  a{
+    color: $primary-color-3;
+    font-weight: bold;
+  }
+}
 .account{
   margin-top: 30px;
   display: flex;
@@ -45,6 +49,14 @@
   u{
     color: $primary-color-3;
   }
+}
+.imageModale{
+  width: 500px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
 }
 
 input.ng-invalid.ng-touched {
@@ -62,16 +74,17 @@ input.ng-valid.ng-touched {
   }
 }
 
-
-
+.row{
+  margin-bottom: 50px;
+}
 
 
 button{
+  color: black;
   background-color: $primary-color-3;
   border-radius: 15px;
   position: relative;
   padding: 10px;
-  margin: 0 15px;
   text-decoration: none;
   letter-spacing: 2px;
   font-size: 20px;
@@ -79,6 +92,7 @@ button{
   transition: 0.5s;
   border: 0;
   cursor: pointer;
+  width: 150px;
 }
 button:hover{
   background: $primary-color-3;
@@ -116,9 +130,16 @@ button:hover:after{
   width: 100%;
   height: 100%;
 }
-
-p.help.is-danger.ng-star-inserted {
-  width: 70%;
-  display: flex;
-  justify-content: flex-end;
+@media screen and (max-width: 960px) {
+  .imageModale{
+    width: 400px;
+    height: 250px;
+  }
 }
+@media screen and (max-width: 660px) {
+  .imageModale{
+    width: 300px;
+    height: 200px;
+  }
+}
+
